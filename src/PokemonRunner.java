@@ -41,13 +41,12 @@ public class PokemonRunner
         AbstractPokemon magby = new Magby();
         AbstractPokemon magikarp = new Magikarp();
         AbstractPokemon oddish = new Oddish();
-        JOptionPane worldSelector = new JOptionPane();
         String[] worldChoices = {"Randomly Generated", "Blank", "Cancel"};
-        int worldSelection = worldSelector.showOptionDialog(null, "Please select the world template:", "World Selection",
+        int worldSelection = JOptionPane.showOptionDialog(null, "Please select the world template:", "World Selection",
             JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, worldChoices, worldChoices[0]);
         if (worldSelection == 2)
         {
-            worldSelector.showMessageDialog(null, "No world chosen.  Program will terminate.", "World Selection", JOptionPane.PLAIN_MESSAGE);
+            JOptionPanew.showMessageDialog(null, "No world chosen.  Program will terminate.", "World Selection", JOptionPane.PLAIN_MESSAGE);
             System.exit(0);
         }
         else if (worldSelection == 0)
