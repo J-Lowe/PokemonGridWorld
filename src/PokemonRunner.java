@@ -46,7 +46,7 @@ public class PokemonRunner
             JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, worldChoices, worldChoices[0]);
         if (worldSelection == 2)
         {
-            JOptionPanew.showMessageDialog(null, "No world chosen.  Program will terminate.", "World Selection", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No world chosen.  Program will terminate.", "World Selection", JOptionPane.PLAIN_MESSAGE);
             System.exit(0);
         }
         else if (worldSelection == 0)
