@@ -1,0 +1,30 @@
+<project name="PokemonGridWorld" default="dist" basedir=".">
+	<description>A basic port of Pokémon to Grid World</description>
+
+	<target name="build">
+		<mkdir dir="build" />
+	</target>
+
+	<target name="compile" depends="build" description="Compile the classes">
+		<mkdir dir="build/classes" />
+		<javac includeantruntime="false" target="1.7" source="1.7" srcdir="src" destdir="build/classes">
+			<classpath location="lib/gridworld.jar" />
+		</javac>
+	</target>
+
+	<target name="dist" depends="compile" description="Generate a JAR file">
+		<mkdir dir="dist" />
+		<manifest file="build/MANIFEST.MF">
+			<attribute name="Main-Class" value="PokemonRunner" />
+		</manifest>
+		<jar jarfile="dist/PokemonGridWorld.jar" manifest="build/MANIFEST.MF" basedir="build/classes">
+			<zipgroupfileset dir="lib" includes="*.jar" />
+			<zipfileset dir="res" includes="**/*" />
+		</jar>
+	</target>
+
+	<target name="clean" description="Clean up compiled files">
+		<delete dir="build" />
+		<delete dir="dist" />
+	</target>
+</project>
