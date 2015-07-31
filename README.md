@@ -4,7 +4,13 @@ A basic port of Pokémon into GridWorld.
 
 Building
 --------
-GridWorld.jar must be in your build path to run properly.
+Using ant:
+```
+$ ant dist
+```
+
+Using Eclipse:
+File -> New -> Project -> Java Project from Existing Ant Build File
 
 Running
 -------
